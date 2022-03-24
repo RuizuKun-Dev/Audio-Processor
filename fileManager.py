@@ -97,14 +97,14 @@ def __copyAudioFiles():
             for name, path in files.items():
                 if len(files.keys()) == 1:
                     if not directoryUtil.getDir(path.replace("Input", "Output")):
-                        name = re.sub('\W+', ' ', name).replace("_", " ")
+                        name = re.sub(r'\W+', ' ', name).replace("_", " ")
                         shutil.copy(
                             path, f"Output/{dir}/{name}.{type.lower()}")
                 else:
                     directoryUtil.createDir(f"Output/{dir}/{type}")
                     for name, path in files.items():
                         if not directoryUtil.getDir(path.replace("Input", "Output")):
-                            name = re.sub('\W+', ' ', name).replace("_", " ")
+                            name = re.sub(r'\W+', ' ', name).replace("_", " ")
                             shutil.copy(
                                 path, f"Output/{dir}/{type}/{name}.{type.lower()}")
 

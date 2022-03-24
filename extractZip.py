@@ -2,7 +2,6 @@ import glob
 import os
 import shutil
 import threading
-from time import sleep
 
 import directoryUtil
 

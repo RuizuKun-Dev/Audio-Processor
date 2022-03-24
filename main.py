@@ -1,7 +1,6 @@
 import fileManager
 import extractZip
 import cleanUp
-from time import sleep
 print("Start...")
 
 

@@ -8,8 +8,7 @@ def createDir(path):
 def getDir(path):
     if os.path.exists(path):
         return path
-    else:
-        return None
+    return None
 
 
 def removeDir(path):

@@ -8,7 +8,7 @@ import directoryUtil
 
 
 def extractZipFiles():
-    threads = list()
+    threads = []
     for file in os.scandir("Input"):
         if not directoryUtil.getDir(file.path.replace(".zip", "")):
             if file.path.endswith(".zip"):

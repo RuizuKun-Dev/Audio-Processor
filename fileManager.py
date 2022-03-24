@@ -45,7 +45,7 @@ def __convertToOGG(dic, path, dir, name):
 
 def __convertFromWAV():
     __scanForALLAudio()
-    threads = list()
+    threads = []
     for dir, dic in Audio.items():
         if not dic.get('MP3'):
             dic["MP3"] = {}

@@ -9,13 +9,15 @@ import directoryUtil
 def extractZipFiles():
     threads = []
     for file in os.scandir("Input"):
-        if not directoryUtil.getDir(file.path.replace(".zip", "")):
-            if file.path.endswith(".zip"):
-                print("extracting " + file.path)
-                thread = threading.Thread(target=shutil.unpack_archive, args=(
-                    file.path, file.path.replace(".zip", ""), "zip"))
-                threads.append(thread)
-                thread.start()
+        if (
+            not directoryUtil.getDir(file.path.replace(".zip", ""))
+            and file.path.endswith(".zip")
+        ):
+            print("extracting " + file.path)
+            thread = threading.Thread(target=shutil.unpack_archive, args=(
+                file.path, file.path.replace(".zip", ""), "zip"))
+            threads.append(thread)
+            thread.start()
 
     for thread in threads:
         thread.join()

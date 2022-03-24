@@ -56,14 +56,12 @@ def __convertFromWAV():
         if dic.get("WAV"):
             for name, path in dic["WAV"].items():
                 if not dic["MP3"].get(name):
-                    # print(f"Converting {name} to .mp3")
                     thread = threading.Thread(
                         target=__convertToMP3, args=(dic, path, dir, name))
                     threads.append(thread)
                     thread.start()
 
                 if not dic["OGG"].get(name):
-                    # print(f"Converting {name} to .ogg")
                     thread = threading.Thread(
                         target=__convertToOGG, args=(dic, path, dir, name))
                     threads.append(thread)
